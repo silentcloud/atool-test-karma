@@ -1,0 +1,46 @@
+{
+  "name": "testfull",
+  "version": "1.0.0",
+  "description": "Unit testing tool with karma & webpack & mocha & sinon & chai",
+  "keywords": [
+    "testing",
+    "karma",
+    "webpack",
+    "istanbul",
+    "mocha",
+    "react",
+    "babel6"
+  ],
+  "bin": {
+    "testfull": "./bin/testfull"
+  },
+  "author": "rjmuqiang@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "commander": "~2.9.0",
+    "isparta": "~4.0.0",
+    "isparta-loader": "^2.0.0",
+    "karma": "^0.13.15",
+    "karma-coverage": "^0.5.3",
+    "karma-mocha": "^0.2.1",
+    "karma-mocha-reporter": "^1.1.2",
+    "karma-phantomjs-launcher": "~0.2.3",
+    "karma-sinon-chai": "~1.1.0",
+    "karma-sourcemap-loader": "^0.3.6",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.3.4",
+    "object-assign": "~4.0.1",
+    "phantomjs": "~1.9.19"
+  },
+  "devDependencies": {
+    "coveralls": "~2.11.4"
+  },
+  "peerDependencies": {
+    "atool-build": "~0.6.x"
+  },
+  "scripts": {
+    "test": "./bin/testfull",
+    "coveralls": "cat ./coverage/report-lcov/lcov.info | coveralls"
+  }
+}
