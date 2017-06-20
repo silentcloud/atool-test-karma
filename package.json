@@ -1,6 +1,6 @@
 {
   "name": "atool-test-karma",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Unit testing tool with karma & webpack & mocha & sinon & chai",
   "keywords": [
     "testing",
@@ -12,7 +12,7 @@
     "babel6"
   ],
   "bin": {
-    "testfull": "./bin/atool-test-karma"
+    "atool-test-karma": "./bin/atool-test-karma"
   },
   "author": "rjmuqiang@gmail.com",
   "license": "MIT",
