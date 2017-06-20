@@ -1,5 +1,5 @@
 {
-  "name": "testfull",
+  "name": "atool-test-karma",
   "version": "1.0.0",
   "description": "Unit testing tool with karma & webpack & mocha & sinon & chai",
   "keywords": [
@@ -12,7 +12,7 @@
     "babel6"
   ],
   "bin": {
-    "testfull": "./bin/testfull"
+    "testfull": "./bin/atool-test-karma"
   },
   "author": "rjmuqiang@gmail.com",
   "license": "MIT",
@@ -37,10 +37,10 @@
     "coveralls": "~2.11.4"
   },
   "peerDependencies": {
-    "atool-build": "~0.6.x"
+    "atool-build": "~0.11.x"
   },
   "scripts": {
-    "test": "./bin/testfull",
+    "test": "./bin/atool-test-karma",
     "coveralls": "cat ./coverage/report-lcov/lcov.info | coveralls"
   }
 }

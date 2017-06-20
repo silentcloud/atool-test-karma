@@ -11,6 +11,7 @@ commander
   .option('-p, --port', 'The port where the webserver will be listening, default 9876')
   .option('--browsers', 'A list of browsers to launch and capture')
   .option('--assert <expectjs, shouldjs, chaijs(default)>', 'assert library which you want to use')
+  .allowUnknownOption()
   .parse(process.argv);
 
 var karma_config_file = path.resolve(__dirname, '../karma.conf.js');
@@ -26,20 +27,23 @@ if (!fs.existsSync(karmaPath)) {
 
 var child = spawn(karmaPath, args, { stdio: 'inherit' })
 
-child.on('exit', function (code, signal) {
-  require('../lib/coverage');
-  process.on('exit', function(){
-    if (signal) {
-      process.kill(process.pid, signal);
-    } else {
-      process.exit(code);
-    }
-  });
+child.on('error', (err) => {
+  console.log(err);
 });
+
+// child.on('exit', function (code, signal) {
+//   console.log(code, signal)
+//   require('../lib/coverage');
+  // process.on('exit', function(){
+  //   if (signal) {
+  //     process.kill(process.pid, signal);
+  //   } else {
+  //     process.exit(code);
+  //   }
+  // });
+// });
 
 process.on('SIGINT', function () {
   child.kill('SIGINT');
   child.kill('SIGTERM');
 });
-
-

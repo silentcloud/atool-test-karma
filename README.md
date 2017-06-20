@@ -1,4 +1,4 @@
-# testfull
+# atool-test-karma
 
 ## Built-in
 
@@ -12,26 +12,26 @@
 
 ```
 "srcipts": {
-  "test": "testfull"
+  "test": "atool-test-karma"
 }
 ```
 
 with options:
 
 ```
-testfull --port 9888 --assert shouldjs --browsers Chrome
+atool-test-karma --port 9888 --assert shouldjs --browsers Chrome
 ```
 
 ##  Options
 
 - `--port`: server port, default is 9876;
-- `--browsers`: default: `PhantomJS`, run tests in specify browsers;
 - `--assert`: run tests with custom assert library <expectjs、shouldjs、chaijs(default)>
+- support [karma args](http://karma-runner.github.io/1.0/config/configuration-file.html)
 
 ## Browsers & Assert Libs
 
 ### Browsers:
->  atool-test --browsers Chrome,Firefox
+>  atool-test-karma --browsers Chrome,Firefox
 
 - Chrome: `npm install karma-chrome-launcher --save-dev`
 - Firefox: `npm install karma-firefox-launcher --save-dev`
@@ -39,8 +39,7 @@ testfull --port 9888 --assert shouldjs --browsers Chrome
 - Safari: `npm install karma-safari-launcher --save-dev`
 
 ### Assert Libs:
->  atool-test --assert expectjs
+>  atool-test-karma --assert expectjs
 
 - expectjs: `npm install karma-sinon-expect --save-dev`
 - shouldjs: `npm install karma-should-sinon karma-should karma-sinon --save-dev`
-
