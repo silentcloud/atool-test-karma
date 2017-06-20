@@ -31,17 +31,16 @@ child.on('error', (err) => {
   console.log(err);
 });
 
-// child.on('exit', function (code, signal) {
-//   console.log(code, signal)
-//   require('../lib/coverage');
-  // process.on('exit', function(){
-  //   if (signal) {
-  //     process.kill(process.pid, signal);
-  //   } else {
-  //     process.exit(code);
-  //   }
-  // });
-// });
+child.on('exit', function (code, signal) {
+  require('../lib/coverage');
+  process.on('exit', function(){
+    if (signal) {
+      process.kill(process.pid, signal);
+    } else {
+      process.exit(code);
+    }
+  });
+});
 
 process.on('SIGINT', function () {
   child.kill('SIGINT');
